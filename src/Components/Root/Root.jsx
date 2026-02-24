@@ -19,3 +19,8 @@ const Root = () => {
 };
 
 export default Root;
+
+
+// use : usersPromise > suspense > promise > use(userPromise)
+// [less used so far] > useState + useEffect (() => {}, [])
+// load data before router component is rendered
