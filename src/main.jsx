@@ -10,6 +10,7 @@ import Mobiles from './Components/Mobiles/Mobiles.jsx';
 import Laptops from './Components/Laptops/Laptops.jsx';
 import Users from './Components/Users/Users.jsx';
 import Users2 from './Components/Users2/Users2.jsx';
+import UserDetails from './Components/Users/UserDetails.jsx';
 // import { Users } from 'lucide-react';
  const usersPromise = fetch('https://jsonplaceholder.typicode.com/users').then(res => res.json())
 const router = createBrowserRouter([
@@ -26,6 +27,11 @@ const router = createBrowserRouter([
         element : <Suspense fallback = {'Loading'}>
           <Users2 usersPromise = {usersPromise}></Users2>
         </Suspense>
+      },
+      {
+        path: 'users/:userId',
+        loader: (params)=> fetch(''),
+        Component: UserDetails
       }
     ]
   },
