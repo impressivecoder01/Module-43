@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router';
 
 const Post = ({data}) => {
     const {title, body} = data;
+    
     const navigate = useNavigate()
     const handleNavigate = () => {
         navigate(`/post/${data.id}`)
