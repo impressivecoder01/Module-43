@@ -11,6 +11,8 @@ import Laptops from './Components/Laptops/Laptops.jsx';
 import Users from './Components/Users/Users.jsx';
 import Users2 from './Components/Users2/Users2.jsx';
 import UserDetails from './Components/Users/UserDetails.jsx';
+import Posts from './Components/Posts/Posts.jsx';
+import PostDetails from './Components/Posts/PostDetails.jsx';
 // import { Users } from 'lucide-react';
  const usersPromise = fetch('https://jsonplaceholder.typicode.com/users').then(res => res.json())
 const router = createBrowserRouter([
@@ -32,6 +34,16 @@ const router = createBrowserRouter([
         path: 'users/:userId',
         loader: ({params}) => fetch(`https://jsonplaceholder.typicode.com/users/${params.userId}`),
         Component: UserDetails
+      },
+      {
+        path: 'posts',
+        loader: () => fetch('https://jsonplaceholder.typicode.com/posts'),
+        Component: Posts
+      },
+      {
+        path: 'post/:postId',
+        loader: ({params})=> fetch(`https://jsonplaceholder.typicode.com/posts/${params.postId}`),
+        Component: PostDetails
       }
     ]
   },

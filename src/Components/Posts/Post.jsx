@@ -1,9 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router';
 
-const Post = () => {
+const Post = ({data}) => {
+    const {title, body} = data
     return (
-        <div>
-            <h1>This is my post</h1>
+        <div className='border p-5 m-5'>
+            <p>{title}</p>
+            <h1>{body}</h1>
+            
+            <Link to={`/post/${data.id}`}>More Details</Link>
         </div>
     );
 };
